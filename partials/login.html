@@ -1,5 +1,11 @@
-<form action="">
-	<label>Username:</label><input type="text" name="username" />
-	<label>Password:</label><input type="text" name="password" />
-	<button>Login</button>
-</form>
+<section ng-controller="login">
+	<form class="form-signin" ng-submit="submitForm()">
+		<h2 class="form-signin-heading">{{title}}</h2>
+		<label for="inputEmail" class="sr-only">Username</label>
+		<input ng-model="user.username" name="username" type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input ng-model="user.password" name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	</form>
+</section>

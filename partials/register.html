@@ -1,7 +1,23 @@
-<form>
-	<label>First Name:</label><input type="text" name="firstname" />
-	<label>Last Name:</label><input type="text" name="lastname" />
-	<label>Email:</label><input type="text" name="email" />
-	<label>Password:</label><input type="text" name="password" />
-	<button>Register</button>
-</form>
+<section ng-controller="register">
+	<form class="form-signin" ng-submit="submitForm()">
+		<h2 class="form-signin-heading">{{title}}</h2>
+		<label class="sr-only">First Name:</label><input type="text" ng-model="user.firstname" name="firstname" class="form-control" placeholder="First Name" />
+		<label class="sr-only">Last Name:</label><input type="text" ng-model="user.lastname" name="lastname" class="form-control" placeholder="Last Name" />
+		<label class="sr-only">Username:</label><input type="text" ng-model="user.username" name="username" class="form-control" placeholder="Username" />
+		<label class="sr-only">Email:</label><input type="text" ng-model="user.email" name="email" class="form-control" placeholder="Email" />
+		<label class="sr-only">Password:</label><input type="text" ng-model="user.password" name="password" class="form-control" placeholder="Password" />
+		<label class="sr-only">Confirm Password:</label><input type="text" ng-model="user.confirm_password" name="confirm_password" class="form-control" placeholder="Confirm Password" />
+		<div class="checkbox">
+			<label>Gender</label><br />
+			<input type="radio" name="gender" ng-model="user.gender" value="Male" /> Male
+			<input type="radio" name="gender" ng-model="user.gender" value="Female" /> Female
+		</div>
+		<div class="checkbox">
+			<label>User Type</label><br />
+			<input type="radio" name="type" ng-model="user.type" value="renter" /> Renter
+			<input type="radio" name="type" ng-model="user.type" value="lister" /> Lister
+		</div>
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+	</form>
+</section>
